@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/akmalsulaymonov/go-rest-api/internal/comment"
 	"github.com/akmalsulaymonov/go-rest-api/internal/db"
 )
 
@@ -27,6 +28,13 @@ func Run() error {
 		return err
 	}
 	fmt.Println("Successfully connected and pinged database")
+
+	// GetComment - get comment by uuid
+	cmtService := comment.NewService(db)
+	fmt.Println(cmtService.GetComment(
+		context.Background(),
+		"2a746118-d01e-11ed-afa1-0242ac120002",
+	))
 
 	return nil
 }
