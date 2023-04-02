@@ -6,6 +6,7 @@ import (
 
 	"github.com/akmalsulaymonov/go-rest-api/internal/comment"
 	"github.com/akmalsulaymonov/go-rest-api/internal/db"
+	transportHttp "github.com/akmalsulaymonov/go-rest-api/internal/transport/http"
 )
 
 // Run - is going to be responsible for the instantiation and startup
@@ -47,6 +48,13 @@ func Run() error {
 		context.Background(),
 		"2a115dec-b4d8-4074-987d-c47575a3065f",
 	))
+
+	// transport
+	fmt.Println("Transport starts...")
+	httpHandler := transportHttp.NewHandler(cmtService)
+	if err := httpHandler.Serve(); err != nil {
+		return err
+	}
 
 	return nil
 }
