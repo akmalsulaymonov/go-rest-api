@@ -13,6 +13,11 @@ type Database struct {
 	Client *sqlx.DB
 }
 
+// DeleteComment implements comment.Store
+func (*Database) DeleteComment(context.Context, string) error {
+	panic("unimplemented")
+}
+
 func NewDatabase() (*Database, error) {
 	connectionString := fmt.Sprintf(
 		"host=%s port=%s user=%s dbname=%s password=%s sslmode=%s",
