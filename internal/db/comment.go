@@ -63,7 +63,7 @@ func (d *Database) PostComment(ctx context.Context, cmt comment.Comment) (commen
 	return convertCommentRowToComment(postRow), nil
 }
 
-func (d *Database) DeletComment(ctx context.Context, id string) error {
+func (d *Database) DeleteComment(ctx context.Context, id string) error {
 	_, err := d.Client.ExecContext(
 		ctx,
 		`DELETE FROM comments WHERE id = $1`,
