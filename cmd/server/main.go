@@ -32,22 +32,24 @@ func Run() error {
 
 	cmtService := comment.NewService(db)
 
-	// PostComment - posts comment
-	cmtService.PostComment(
-		context.Background(),
-		comment.Comment{
-			ID:     "2a746118-d01e-11ed-afa1-0242ac120011",
-			Slug:   "slug-aki",
-			Author: "Azizjon",
-			Body:   "Hello mama",
-		},
-	)
+	/*
+		// PostComment - posts comment
+		cmtService.PostComment(
+			context.Background(),
+			comment.Comment{
+				ID:     "2a746118-d01e-11ed-afa1-0242ac120011",
+				Slug:   "slug-aki",
+				Author: "Azizjon",
+				Body:   "Hello mama",
+			},
+		)
 
-	// GetComment - get comment by uuid
-	fmt.Println(cmtService.GetComment(
-		context.Background(),
-		"2a115dec-b4d8-4074-987d-c47575a3065f",
-	))
+		// GetComment - get comment by uuid
+		fmt.Println(cmtService.GetComment(
+			context.Background(),
+			"2a115dec-b4d8-4074-987d-c47575a3065f",
+		))
+	*/
 
 	// transport
 	fmt.Println("Transport starts...")
