@@ -39,10 +39,10 @@ func TestCommentDatabase(t *testing.T) {
 		})
 		assert.NoError(t, err)
 
-		err := db.DeleteComment(context.Background(), cmt.ID)
+		err = db.DeleteComment(context.Background(), cmt.ID)
 		assert.NoError(t, err)
 
-		//_, err := db.GetComment(context.Background(), cmt.ID)
-		//assert.NoError(t, err)
+		_, err = db.GetComment(context.Background(), cmt.ID)
+		assert.NoError(t, err)
 	})
 }
